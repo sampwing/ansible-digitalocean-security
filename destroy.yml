@@ -11,4 +11,10 @@
         wait_timeout=500
       register: droplet
     - debug: msg="debug {{ droplet }}"
+
+    - digital_ocean_domain: >
+        state=absent
+        name={{ droplet_name }}.host.sampwing.com
+      register: dns
+    - debug: msg="dns {{ dns }}"
      

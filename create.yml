@@ -24,4 +24,16 @@
         wait_timeout=500
       register: droplet
     - debug: msg="droplet {{ droplet }}"
-     
+
+    - digital_ocean_domain: >
+        state=present
+        name={{ droplet_name }}.host.sampwing.com
+        ip={{ droplet.droplet.ip_address }}
+
+#  roles:
+#    - { role: common, hosts: droplet.ip_address }
+#    - { role: nginx, hosts: droplet.ip_address }
+#    - { role: ufw, hosts: droplet.ip_address }
+#     
+#  post_tasks:
+#    - shell: echo "good bye"

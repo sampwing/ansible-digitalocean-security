@@ -27,3 +27,7 @@ ansible-playbook create.yml
 
 --stop
 ansible-playbook destroy.yml
+
+
+-- hosts list is empty -- need to use digital ocean's dns to add the instances to some dns
+-- and then use that hosts file to perform some other playbook

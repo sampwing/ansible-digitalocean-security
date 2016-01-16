@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Remove Droplets
+      digital_ocean: >
+        state=absent
+        name="Home Key"
+#      register: my_droplet
+#    - debug: msg="ID is {{ my_droplet.droplet.id }}"
+#    - debug: msg="IP is {{ my_droplet.droplet.ip_address }}"

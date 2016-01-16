@@ -1,0 +1,10 @@
+# DO SSH key settings
+ssh_name: ansible
+ssh_pub_key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+ssh_private_key: "~/.ssh/id_rsa"
+
+# # DO droplet settings
+droplet_name: mydroplet
+region_id: sfo1 # AMS
+size_id: "512mb" # 1 GB / 1 CPU
+image_id: "ubuntu-14-04-x64"

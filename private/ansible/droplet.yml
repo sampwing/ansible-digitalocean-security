@@ -1,0 +1,8 @@
+---
+- name: setup server
+  hosts: droplet 
+  user: root
+  sudo: true
+  roles:
+    - core
+    - nginx

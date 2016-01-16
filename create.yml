@@ -9,13 +9,19 @@
         command=ssh
         name={{ ssh_name }}
         ssh_pub_key={{ ssh_pub_key }}
+      register: sshkey
+    - debug: msg="sshkey {{ sshkey }}"
 
     - digital_ocean: >
         state=present
         command=droplet
+        ssh_key_ids={{ sshkey.ssh_key.id }}
         name={{ droplet_name }}
         unique_name=yes
         size_id={{ size_id }}
         region_id={{ region_id }} 
         image_id={{ image_id }}
         wait_timeout=500
+      register: droplet
+    - debug: msg="droplet {{ droplet }}"
+     

@@ -20,3 +20,10 @@ six==1.10.0
 -- able to create and destroy droplets
 
 -- use a vars.yml file to hold names of instances and instance types
+
+
+--start
+ansible-playbook create.yml
+
+--stop
+ansible-playbook destroy.yml
